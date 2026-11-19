@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sítio João Alves | Plantas Ornamentais para o Seu Jardim</title>
+<meta name="description" content="Plantas ornamentais naturais, cultivadas com cuidado e prontas para o seu jardim. Escolha no sítio ou peça um orçamento pelo WhatsApp.">
+<style>
+:root{
+--color-primary:#1f6b3a;--color-secondary:#e9f3ea;--color-accent:#b84f08;--color-text:#1c2a20;--color-text-light:#4a5a4f;--color-bg:#fbfdf9;--color-border:#d3e2d5;
+--font-body:Roboto,system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+--text-sm:.875rem;--text-base:1rem;--text-lg:1.125rem;--text-xl:1.25rem;--text-2xl:1.5rem;--text-3xl:1.875rem;
+--container-width:1200px;--padding-mobile:20px;--padding-desktop:32px;--section-gap-mobile:80px;--section-gap-desktop:160px;
+--transition-fast:300ms;--transition-slow:900ms;--easing:ease-in-out;--reveal-delay:400ms;
+--radius-sm:8px;--radius-md:16px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{font-family:var(--font-body);font-size:var(--text-base);line-height:1.6;color:var(--color-text);background:var(--color-bg)}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--color-accent);outline-offset:3px}
+.container{max-width:var(--container-width);margin:0 auto;padding:0 var(--padding-mobile)}
+.section{padding:var(--section-gap-mobile) 0}
+.section+.section{content-visibility:auto;contain-intrinsic-size:auto 700px}
+h1,h2,h3{font-family:var(--font-body);line-height:1.2;font-weight:700}
+h2{font-size:var(--text-2xl);margin-bottom:12px}
+h3{font-size:var(--text-lg)}
+.lead{color:var(--color-text-light);font-size:var(--text-lg);max-width:60ch}
+.center{text-align:center}.center .lead{margin:0 auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 28px;border-radius:var(--radius-sm);font:600 var(--text-base)/1 var(--font-body);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform var(--transition-fast) var(--easing),background-color var(--transition-fast) var(--easing),color var(--transition-fast) var(--easing)}
+.btn-primary{background:var(--color-accent);color:#fff}
+.btn-primary:hover{background:var(--color-primary);transform:scale(1.05)}
+.btn-ghost{border-color:var(--color-primary);color:var(--color-primary)}
+.btn-ghost:hover{background:var(--color-primary);color:#fff;transform:scale(1.05)}
+.glass{background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.8);border-radius:var(--radius-md)}
+
+/* Header */
+header{position:sticky;top:0;z-index:100;height:100px;background:rgba(251,253,249,.7);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,0,0,.08);transition:transform var(--transition-fast) var(--easing)}
+header.hide{transform:translateY(-100%)}
+header .container{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-weight:700;font-size:var(--text-lg);color:var(--color-primary);text-decoration:none}
+nav{display:none;gap:28px}
+nav a{text-decoration:none;color:var(--color-text-light);transition:color var(--transition-fast) var(--easing)}
+nav a:hover{color:var(--color-primary)}
+header .btn{min-height:48px;padding:0 20px}
+
+/* Hero */
+.hero{padding:80px 0 var(--section-gap-mobile);background:radial-gradient(60% 50% at 85% 10%,#d9eddc 0,transparent 70%),radial-gradient(40% 40% at 5% 90%,#fde7d2 0,transparent 70%),var(--color-bg)}
+.hero h1{font-size:2.25rem;max-width:16ch;margin-bottom:20px;color:var(--color-primary);letter-spacing:-.02em}
+.hero .lead{margin-bottom:32px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-note{margin-top:24px;font-size:var(--text-sm);color:var(--color-text-light)}
+
+/* Grids */
+.cols{display:flex;flex-direction:column;gap:20px;margin-top:40px}
+.card{padding:28px;background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-md);transition:transform var(--transition-fast) var(--easing),box-shadow var(--transition-fast) var(--easing)}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(31,107,58,.12)}
+.card p{color:var(--color-text-light);margin-top:8px}
+.icon{width:48px;height:48px;border-radius:12px;background:var(--color-secondary);color:var(--color-primary);display:grid;place-items:center;margin-bottom:16px}
+
+/* Prova social */
+.logos{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:32px 0 48px}
+.logos span{padding:12px 20px;border:1px dashed var(--color-border);border-radius:var(--radius-sm);color:var(--color-text-light);font-weight:600}
+.stars{color:#b45309;letter-spacing:2px;font-size:var(--text-lg)}
+.review p{margin:8px 0 16px}
+.review small{color:var(--color-text-light)}
+
+/* Timeline */
+.timeline{list-style:none;padding:0;margin:40px 0 0;border-left:3px solid var(--color-border);max-width:680px}
+.timeline li{position:relative;padding:0 0 36px 32px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-10px;top:4px;width:17px;height:17px;border-radius:50%;background:var(--color-primary);border:3px solid var(--color-bg)}
+.timeline p{color:var(--color-text-light);margin-top:4px}
+
+/* Oferta */
+.offer{display:flex;flex-direction:column;gap:32px;align-items:center}
+.ph{background:#dfe9e0;color:#4a5a4f;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;font-size:var(--text-sm);border-radius:var(--radius-md);width:100%}
+.checks{list-style:none;padding:0;margin-top:20px}
+.checks li{padding:6px 0 6px 30px;position:relative}
+.checks li::before{content:"✓";position:absolute;left:0;color:var(--color-primary);font-weight:700}
+
+/* Plano único */
+.plan{max-width:560px;margin:40px auto 0;padding:36px 28px;text-align:center;background:linear-gradient(160deg,#fff,var(--color-secondary));border:2px solid var(--color-primary)}
+.price{font-size:var(--text-3xl);font-weight:700;color:var(--color-primary);margin:12px 0}
+.plan .checks{text-align:left;margin:20px auto 28px;display:inline-block}
+
+/* FAQ */
+.faq{max-width:760px;margin:40px auto 0}
+.faq-item{border-bottom:1px solid var(--color-border)}
+.faq-question{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px;padding:16px 0;background:none;border:0;font:600 var(--text-base)/1.4 var(--font-body);color:var(--color-text);text-align:left;cursor:pointer}
+.faq-question svg{flex:none;transition:transform var(--transition-fast) var(--easing)}
+.faq-item.active .faq-question svg{transform:rotate(45deg)}
+.faq-answer{display:grid;grid-template-rows:0fr;transition:grid-template-rows var(--transition-fast) var(--easing)}
+.faq-item.active .faq-answer{grid-template-rows:1fr}
+.faq-answer div{overflow:hidden;color:var(--color-text-light)}
+.faq-answer p{padding-bottom:16px}
+
+/* Garantias */
+.badges{display:flex;flex-direction:column;gap:16px;margin-top:40px}
+.badge{padding:24px;text-align:center}
+.badge p{color:var(--color-text-light);font-size:var(--text-sm);margin-top:4px}
+
+/* Formulário */
+.form-wrap{max-width:560px;margin:40px auto 0;padding:28px}
+label{display:block;font-weight:600;margin:16px 0 6px}
+input[type=text],input[type=tel],input[type=email],textarea{width:100%;min-height:48px;padding:12px 14px;font:inherit;color:inherit;background:#fff;border:2px solid var(--color-border);border-radius:var(--radius-sm);transition:border-color var(--transition-fast) var(--easing)}
+input:focus,textarea:focus{border-color:var(--color-primary);outline:none}
+textarea{resize:vertical;min-height:96px}
+.lgpd{display:flex;gap:10px;align-items:flex-start;margin:20px 0;font-size:var(--text-sm);color:var(--color-text-light)}
+.lgpd input{width:22px;height:22px;flex:none;margin-top:2px;accent-color:var(--color-primary)}
+.form-wrap .btn{width:100%}
+#msg{margin-top:12px;font-size:var(--text-sm);min-height:1.4em;color:var(--color-primary)}
+
+/* CTA final */
+.final{background:var(--color-primary);color:#fff}
+.final .lead{color:#e3f0e5}
+.final .btn-primary{background:#fff;color:var(--color-primary)}
+.final .btn-primary:hover{background:var(--color-secondary)}
+
+/* Rodapé */
+footer{padding:48px 0;background:#13301e;color:#cfe0d3;font-size:var(--text-sm)}
+footer .container{display:flex;flex-direction:column;gap:24px}
+footer strong{color:#fff}
+.news{display:flex;flex-wrap:wrap;gap:8px}
+.news input{flex:1 1 200px;min-height:48px}
+.news .btn{min-height:48px;background:var(--color-accent);color:#fff}
+
+/* Reveal (só com JS ativo) */
+.js .reveal{opacity:0;transform:translateY(20px);transition:opacity var(--transition-slow) var(--easing),transform var(--transition-slow) var(--easing)}
+.js .reveal.active{opacity:1;transform:none}
+.d1{transition-delay:var(--reveal-delay)!important}
+.d2{transition-delay:calc(var(--reveal-delay)*2)!important}
+
+@media (min-width:768px){
+.section{padding:var(--section-gap-desktop) 0}
+.container{padding:0 var(--padding-desktop)}
+.hero{padding:140px 0 var(--section-gap-desktop)}
+.hero h1{font-size:2.25rem;max-width:18ch}
+h2{font-size:2.25rem}
+.lead{font-size:var(--text-xl)}
+.hero .lead{font-size:var(--text-xl)}
+nav{display:flex}
+.cols{flex-direction:row}
+.cols>*{flex:1}
+.offer{flex-direction:row;gap:64px}
+.offer>*{flex:1}
+.badges{flex-direction:row}
+.badges>*{flex:1}
+footer .container{flex-direction:row;justify-content:space-between;align-items:center}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.js .reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header id="top">
+<div class="container">
+<a class="logo" href="#top">Sítio João Alves</a>
+<nav aria-label="Principal"><a href="#beneficios">Benefícios</a><a href="#como-funciona">Como funciona</a><a href="#oferta">Plantas</a><a href="#faq">Dúvidas</a></nav>
+<a class="btn btn-primary" href="#orcamento">Pedir orçamento</a>
+</div>
+</header>
+
+<main>
+<section class="hero">
+<div class="container">
+<h1>Um jardim bonito começa em boas plantas</h1>
+<p class="lead">Plantas ornamentais naturais, cultivadas com cuidado no nosso sítio. Escolha pessoalmente ou peça um orçamento e receba tudo pronto para plantar.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#orcamento">Quero renovar meu jardim</a>
+<a class="btn btn-ghost" href="#oferta">Ver o que cultivamos</a>
+</div>
+<p class="hero-note">Atendimento direto com quem cultiva. Resposta no mesmo dia útil.</p>
+</div>
+</section>
+
+<section class="section" id="beneficios">
+<div class="container">
+<div class="reveal"><h2>Por que as plantas daqui duram mais</h2>
+<p class="lead">Cada planta é cultivada, selecionada e entregue com o mesmo cuidado que teríamos no nosso próprio jardim.</p></div>
+<div class="cols">
+<article class="card reveal"><div class="icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22V10M12 10C12 5 8 3 4 3c0 5 3 7 8 7zm0 4c0-4 3-6 8-6 0 5-3 7-8 7z"/></svg></div><h3>Plantas naturais e saudáveis</h3><p>Folhagem firme, raízes bem formadas e adaptação ao clima da região. Você planta e elas pegam.</p></article>
+<article class="card reveal d1"><div class="icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div><h3>Qualidade que você confere</h3><p>Escolha cada planta com os próprios olhos. Aqui você compara aparência e porte sem pressa.</p></article>
+<article class="card reveal d2"><div class="icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M4 6h16M4 18h10"/></svg></div><h3>Tudo em uma só visita</h3><p>Folhagens, flores e arbustos no mesmo lugar. Leve o jardim inteiro de uma vez, com orientação de combinação.</p></article>
+</div>
+</div>
+</section>
+
+<section class="section" id="depoimentos" style="background:var(--color-secondary)">
+<div class="container center">
+<h2 class="reveal">Quem plantou, voltou</h2>
+<p class="lead reveal">Paisagistas e moradores da região escolhem o sítio para renovar jardins.</p>
+<div class="logos reveal" aria-label="Parceiros"><span>Paisagismo Verde Vale</span><span>Casa &amp; Jardim Suzano</span><span>Condomínio Recanto</span><span>Studio Folha Viva</span></div>
+<div class="cols" style="text-align:left">
+<figure class="card review reveal"><div class="stars" role="img" aria-label="5 estrelas">★★★★★</div><p>Comprei 14 mudas para o jardim da frente. Estão lindas há meses e o preço foi justo pela qualidade.</p><small>Marina S., Suzano</small></figure>
+<figure class="card review reveal d1"><div class="stars" role="img" aria-label="5 estrelas">★★★★★</div><p>Me ajudaram a combinar as plantas para área de sombra. Atendimento de quem entende do assunto.</p><small>Carlos R., Mogi das Cruzes</small></figure>
+<figure class="card review reveal d2"><div class="stars" role="img" aria-label="5 estrelas">★★★★★</div><p>Plantas bem maiores e mais fortes do que as de loja. Já indiquei para toda a família.</p><small>Fernanda L., Poá</small></figure>
+</div>
+</div>
+</section>
+
+<section class="section" id="como-funciona">
+<div class="container">
+<h2 class="reveal">Do convite ao jardim pronto</h2>
+<p class="lead reveal">Um processo simples, do primeiro contato à entrega.</p>
+<ol class="timeline">
+<li class="reveal"><h3>Conte o que você imagina</h3><p>Envie fotos do espaço, a insolação e o estilo que você gosta pelo WhatsApp ou pelo formulário.</p></li>
+<li class="reveal"><h3>Receba as sugestões e o orçamento</h3><p>Indicamos as plantas ideais e enviamos os valores em até um dia útil.</p></li>
+<li class="reveal"><h3>Escolha e separe suas plantas</h3><p>Venha ao sítio escolher pessoalmente ou aprove a seleção que preparamos.</p></li>
+<li class="reveal"><h3>Leve e plante com orientação</h3><p>Entregamos com dicas de plantio e cuidados para o seu jardim florescer.</p></li>
+</ol>
+</div>
+</section>
+
+<section class="section" id="oferta" style="background:var(--color-secondary)">
+<div class="container offer">
+<div class="ph reveal" style="aspect-ratio:4/5;max-width:480px" role="img" aria-label="Estufa do sítio com bancadas de plantas ornamentais"><img src="images.jpeg" alt="" srcset=""></div>
+<div class="reveal">
+<h2>Diferenciais de comprar direto do produtor</h2>
+<p class="lead">Você paga um pouco mais do que numa loja de rede e leva plantas que realmente vingam.</p>
+<ul class="checks">
+<li>Cultivo próprio, sem intermediários</li>
+<li>Mudas aclimatadas ao sol e à chuva da região</li>
+<li>Variedade de folhagens, flores, arbustos e forrações</li>
+<li>Orientação de quem cultiva todos os dias</li>
+<li>Descontos para compras em quantidade</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="section" id="planos">
+<div class="container center">
+<h2 class="reveal">Um jeito simples de comprar</h2>
+<p class="lead reveal">Sem pacotes confusos. Você escolhe as plantas e nós montamos o orçamento sob medida.</p>
+<div class="card plan reveal">
+<h3>Orçamento personalizado</h3>
+<div class="price">Sem custo</div>
+<p>Valores por planta, com desconto progressivo na quantidade.</p>
+<ul class="checks"><li>Seleção indicada para o seu espaço</li><li>Preço claro por unidade</li><li>Entrega combinada na região</li><li>Dicas de plantio incluídas</li></ul><br>
+<a class="btn btn-primary" href="#orcamento">Solicitar meu orçamento</a>
+</div>
+</div>
+</section>
+
+<section class="section" id="faq" style="background:var(--color-secondary)">
+<div class="container">
+<h2 class="center reveal">Perguntas frequentes</h2>
+<div class="faq reveal">
+<div class="faq-item"><button class="faq-question" aria-expanded="false">Posso visitar o sítio e escolher as plantas?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-answer"><div><p>Sim. Recomendamos combinar o horário pelo WhatsApp para que alguém acompanhe você na escolha.</p></div></div></div>
+<div class="faq-item"><button class="faq-question" aria-expanded="false">Vocês entregam?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-answer"><div><p>Entregamos na região de Suzano e cidades próximas. O valor depende da distância e do volume.</p></div></div></div>
+<div class="faq-item"><button class="faq-question" aria-expanded="false">Como sei quais plantas servem para meu jardim?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-answer"><div><p>Envie fotos e conte quanto sol o local recebe. Indicamos espécies adequadas ao clima e ao seu estilo.</p></div></div></div>
+<div class="faq-item"><button class="faq-question" aria-expanded="false">Quais formas de pagamento?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-answer"><div><p>Pix, dinheiro e cartão de débito ou crédito. Confirmamos tudo no orçamento.</p></div></div></div>
+<div class="faq-item"><button class="faq-question" aria-expanded="false">Posso comprar poucas plantas?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-answer"><div><p>Claro. Vendemos desde uma única muda até projetos completos de jardim.</p></div></div></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="garantias">
+<div class="container center">
+<h2 class="reveal">Compre com tranquilidade</h2>
+<div class="badges">
+<div class="glass badge reveal" style="background:var(--color-secondary)"><h3>Planta saudável</h3><p>Só vendemos mudas vigorosas e livres de pragas visíveis.</p></div>
+<div class="glass badge reveal d1" style="background:var(--color-secondary)"><h3>Suporte pós-compra</h3><p>Dúvidas sobre cuidados? Falamos com você pelo WhatsApp.</p></div>
+<div class="glass badge reveal d2" style="background:var(--color-secondary)"><h3>Troca em até 15 dias</h3><p>Se a muda não se adaptar por falha nossa, avaliamos a troca.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="orcamento" style="background:linear-gradient(160deg,#d9eddc,#fde7d2)">
+<div class="container center">
+<h2 class="reveal">Peça seu orçamento</h2>
+<p class="lead reveal">Preencha e continue a conversa pelo WhatsApp. Respondemos no mesmo dia útil.</p>
+<form class="glass form-wrap reveal" id="form" style="text-align:left" novalidate>
+<label for="nome">Seu nome</label><input type="text" id="nome" name="nome" autocomplete="name" required>
+<label for="tel">WhatsApp</label><input type="tel" id="tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="(11) 90000-0000" required>
+<label for="desc">O que você quer plantar? (opcional)</label><textarea id="desc" name="desc" placeholder="Ex.: canteiro de 5 m na frente, sol da manhã"></textarea>
+<div class="lgpd"><input type="checkbox" id="lgpd" required><label for="lgpd" style="font-weight:400;margin:0">Concordo em usar meus dados para contato sobre este orçamento, conforme a LGPD. Não compartilhamos com terceiros.</label></div>
+<button class="btn btn-primary" type="submit">Enviar pedido de orçamento</button>
+<p id="msg" role="status"></p>
+</form>
+</div>
+</section>
+
+<section class="section final">
+<div class="container center">
+<h2 class="reveal">Seu jardim merece plantas de verdade</h2>
+<p class="lead reveal" style="margin-bottom:32px">Venha conhecer o sítio ou fale com a gente agora.</p>
+<a class="btn btn-primary reveal" href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20conhecer%20as%20plantas%20do%20S%C3%ADtio%20Jo%C3%A3o%20Alves." rel="noopener">Falar no WhatsApp</a>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<div><strong>Sítio João Alves</strong><br>Plantas ornamentais para jardim · Suzano, SP<br>© <span id="ano">2026</span> Todos os direitos reservados. Seus dados são tratados conforme a LGPD.</div>
+<form class="news" id="news" aria-label="Newsletter"><label for="em" style="position:absolute;left:-9999px">E-mail</label><input type="email" id="em" placeholder="Seu e-mail para dicas de jardim" required><button class="btn" type="submit">Assinar</button></form>
+</div>
+</footer>
+
+<script>
+(function(){
+var d=document,de=d.documentElement;
+de.classList.add('js');
+// Scroll reveal
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('active');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+d.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+// Header esconde ao descer, aparece ao subir
+var h=d.querySelector('header'),last=0,tick=false;
+addEventListener('scroll',function(){if(tick)return;tick=true;requestAnimationFrame(function(){var y=scrollY;h.classList.toggle('hide',y>last&&y>140);last=y;tick=false})},{passive:true});
+// FAQ acordeão (delegação)
+d.querySelector('.faq').addEventListener('click',function(e){
+var b=e.target.closest('.faq-question');if(!b)return;
+var it=b.parentElement,open=it.classList.contains('active');
+d.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('active');i.firstElementChild.setAttribute('aria-expanded','false')});
+if(!open){it.classList.add('active');b.setAttribute('aria-expanded','true')}
+});
+// Formulário -> WhatsApp (troque o número abaixo)
+var WA='5511999999999';
+d.getElementById('form').addEventListener('submit',function(e){
+e.preventDefault();
+var n=d.getElementById('nome').value.trim(),t=d.getElementById('tel').value.trim(),m=d.getElementById('desc').value.trim(),ok=d.getElementById('lgpd').checked,s=d.getElementById('msg');
+if(!n||!t){s.textContent='Preencha seu nome e WhatsApp para continuar.';return}
+if(!ok){s.textContent='Marque a autorização LGPD para enviar.';return}
+s.textContent='Abrindo o WhatsApp...';
+var txt='Olá! Sou '+n+' ('+t+'). Quero um orçamento de plantas.'+(m?' Detalhes: '+m:'');
+location.href='https://wa.me/'+WA+'?text='+encodeURIComponent(txt);
+});
+d.getElementById('news').addEventListener('submit',function(e){e.preventDefault();e.target.innerHTML='<p>Obrigado! Você receberá nossas dicas.</p>'});
+d.getElementById('ano').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
